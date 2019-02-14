@@ -1,0 +1,8 @@
+Hello
+
+This is the input message I want to encode
+
+This is not too long
+
+I need to find the number of spaces in this file
+
