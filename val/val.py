@@ -1,7 +1,7 @@
 import math
 
 def isPrime(n):
-    if(n == 1 or n == 2 or n == 3):
+    if( n == 2 or n == 3):
         return True
     for div in range (3,math.ceil(math.sqrt(n)) + 2):
         if(n % div == 0):
@@ -10,10 +10,10 @@ def isPrime(n):
     return True
 
 #inputFile = open("input.txt" , "r")
-line = "Hi  dweb pee lol"
+line = "aaaaaaaaa"
 print(line)
 #for line in inputFile:
-lastPrime = 1
+lastPrime = 2
 for char in range (len(line)):
     c = line[char]
     if c == " " or c == "." or c == ",":
