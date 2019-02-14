@@ -1,27 +1,17 @@
 import math
-
 def isPrime(n):
-    if( n == 2 or n == 3):
-        return True
-    for div in range (3,math.ceil(math.sqrt(n)) + 2):
+    for div in range (3,math.ceil(math.sqrt(n)) + 2, 2):
         if(n % div == 0):
             return False
-        div += 1
     return True
-
-#inputFile = open("input.txt" , "r")
-line = "aaaaaaaaa"
-print(line)
-#for line in inputFile:
-lastPrime = 2
-for char in range (len(line)):
-    c = line[char]
-    if c == " " or c == "." or c == ",":
-        print(c, end = "")
-    else:
-        while(not isPrime(lastPrime)):
-            lastPrime += 2
-        print((chr((((ord(c.lower()) - 97) + lastPrime)%26)+97)), end = "")
-        if(lastPrime < 3):
-            lastPrime -= 1
-        lastPrime += 2
+iF = open("input.txt" , "r")
+oF = open("output.txt" , "w+")
+last = 2
+for line in iF:
+    for c in line.lower():
+        while(not(last == 2 or last == 3 or isPrime(last))):
+            last += 2
+        oF.write((c) if (ord(c) < 97 or ord(c) > 122) else chr(((ord(c) - 97 + last)%26)+97))
+        last += (2 if last != 2 else 1)
+iF.close()
+oF.close()
