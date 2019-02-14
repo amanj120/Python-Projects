@@ -1,33 +1,39 @@
 import math
 
 def PrimeSieve(n):
-    i = 0;
-    lastPrime = 15;
-    while(len(prime) < n):
-        primeFound = True
-        while(primeFound):
-            for div in range (2,math.ceil(math.sqrt(lastPrime)) + 2):
-                print(str(lastPrime) + " being divided by " + str(div))
-                if(lastPrime % div == 0):
-                    lastPrime += 2
-                    div = 2
-                    break
-            primeFound = False
-            prime.append(lastPrime)
-            lastPrime += 2
-        i += 1
-    for p in prime:
-        print(p)
+    lastPrime = 5;
+    while(len(primes) < n):
+        if(isPrime(lastPrime)):
+            primes.append(lastPrime)
+        lastPrime += 2
+        
+def isPrime(n):
+    for div in range (2,math.ceil(math.sqrt(n)) + 2):
+        if(n % div == 0):
+            return False
+    return True
 
-inputFile = open("input.txt" , "r")
+#inputFile = open("input.txt" , "r")
+line = "Hi  dweb pee lol"
 chars = []
-prime = [1,2,3,5,7,11,13]
-for line in inputFile:
-    for word in line.split():
-        for c in range (len(word)):
-            chars.append(word[c])
-            #print(word[c])
-PrimeSieve(20)
-
-
-
+code = []
+primes = [1,2,3]
+#for line in inputFile:
+for word in line.split():
+    word = word.lower()
+    for c in range (len(word)):
+        chars.append(ord(word[c]) - 97)
+        #print(word[c])
+        #print(chars[-1])
+PrimeSieve(len(chars))
+print(chars)
+print(primes)
+i = 0
+for char in line:
+    if char == " " or char == "." or char == ",":
+        code.append(char)
+    else :
+        code.append(chr(((chars[i] + primes[i])%26)+97))
+        i += 1
+print(line)
+print("".join(code))
