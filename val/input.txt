@@ -1,8 +1,9 @@
-Hello
+Happy Valentines Day!
 
-This is the input message I want to encode
+Thanks for being the foo to my bar, the 220
+to my 284, and being my short, beautiful, smart, 
+fascinating, inspiring, and wholly brilliant
+friend.
 
-This is not too long
-
-I need to find the number of spaces in this file
+-Aman
 
